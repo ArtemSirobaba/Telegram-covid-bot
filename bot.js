@@ -7,9 +7,9 @@ const COUNTRIES_LIST = require('./constants');
 const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.start((ctx) =>
   ctx.reply(
-    `Hello, ${ctx.message.from.first_name}!`,
+    `Hello, ${ctx.message.from.first_name}! I'm Statistics COVID-19 bot! Let's look at a country. Enjoy:)`,
     Markup.keyboard([
-      ['Ukraine', 'Us'],
+      ['Ukraine', 'Belarus'],
       ['Canada', 'Poland'],
     ])
       .resize()
@@ -32,7 +32,7 @@ Recovered: ${data[0][0].recovered}
 `;
     ctx.reply(formatData);
   } catch {
-    ctx.reply('Error, bro! Look at /help');
+    ctx.reply(`Error, ${ctx.message.from.first_name}! You need some /help`);
   }
 });
 
