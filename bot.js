@@ -7,7 +7,7 @@ const COUNTRIES_LIST = require('./constants');
 const bot = new Telegraf(process.env.BOT_TOKEN);
 bot.start((ctx) =>
   ctx.reply(
-    `Hello, ${ctx.message.from.first_name} pidorasovych!`,
+    `Hello, ${ctx.message.from.first_name}!`,
     Markup.keyboard([
       ['Ukraine', 'Us'],
       ['Canada', 'Poland'],
@@ -32,7 +32,7 @@ Recovered: ${data[0][0].recovered}
 `;
     ctx.reply(formatData);
   } catch {
-    ctx.reply('Error, you fucking asshole! Look at the /help');
+    ctx.reply('Error, bro! Look at /help');
   }
 });
 
